@@ -747,7 +747,7 @@ def _format_scores(scores_list, final=False, overall=None):
 # ─────────────────────────────────────────────
 # GRADIO UI
 # ─────────────────────────────────────────────
-with gr.Blocks(css=CSS, title="🎯 AI Interview Coach", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="🎯 AI Interview Coach") as demo:
 
     gr.HTML("""
     <div id="app-header">
@@ -875,12 +875,6 @@ with gr.Blocks(css=CSS, title="🎯 AI Interview Coach", theme=gr.themes.Soft())
         outputs=[mic_input]
     )
 
-if __name__ == "__main__":
-    # Preload Whisper at startup so the first user doesn't wait 10-30s on cold start
-    print("Preloading Whisper model at startup...")
-    try:
-        get_whisper()
-    except Exception as e:
-        print(f"Warning: Whisper preload failed (will lazy-load on first request): {e}")
 
-    demo.launch(server_name="127.0.0.1", server_port=7860, show_error=True)
+if __name__ == "__main__":
+    demo.launch(css=CSS, theme=gr.themes.Soft())
