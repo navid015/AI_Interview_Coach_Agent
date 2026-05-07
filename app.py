@@ -820,7 +820,6 @@ with gr.Blocks(title="🎯 AI Interview Coach") as demo:
             chatbot = gr.Chatbot(
                 label="💬 Interview Session",
                 height=400,
-                type="messages",
                 show_label=True,
                 avatar_images=(None, "https://api.dicebear.com/7.x/bottts/svg?seed=coach")
             )
