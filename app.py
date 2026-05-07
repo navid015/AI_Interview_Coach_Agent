@@ -828,8 +828,7 @@ with gr.Blocks(title="🎯 AI Interview Coach") as demo:
                 coach_audio = gr.Audio(
                     label="🔊 Coach's Voice (Auto-plays)",
                     autoplay=True,
-                    interactive=False,
-                    show_download_button=False
+                    interactive=False
                 )
 
             gr.Markdown("### 🎤 Your Answer")
